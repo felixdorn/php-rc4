@@ -4,7 +4,8 @@ namespace Felix\RC4;
 
 class RC4
 {
-    private static $fake = null;
+    /** @var callable|null */
+    protected static $fake = null;
 
     public static function rc4(string $rawKey, string $rawData): string
     {
@@ -35,7 +36,6 @@ class RC4
             $i = ($i + 1) % 256;
             $j = ($j + $state[$i]) % 256;
 
-
             // Swap
             $tmp = $state[$i];
             $state[$i] = $state[$j];
@@ -48,7 +48,8 @@ class RC4
         return $text;
     }
 
-    public static function fake(callable $fake = null) {
-       static::$fake = $fake;
+    public static function fake(?callable $fake = null): void
+    {
+        static::$fake = $fake;
     }
 }
