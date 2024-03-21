@@ -21,12 +21,17 @@ composer require felixdorn/php-rc4
 ```php
 $encrypted = \Felix\RC4\RC4::rc4('key', 'data')
 $decrypted = \Felix\RC4\RC4::rc4('key', $encrypted);
+```
 
-// In tests
+In tests
+```php
 \Felix\RC4\RC4::fake(function ($key, $data) {
     // Fake it if you need to for some reason.
 });
+```
 
+Helpers
+```php
 rc4('key', 'data'); // calls RC4::rc4
 
 // Or, to be semantic:
