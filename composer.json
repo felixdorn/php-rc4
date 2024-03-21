@@ -1,6 +1,6 @@
 {
-    "name": "felixdorn/:name",
-    "description": ":description",
+    "name": "felixdorn/php-rc4",
+    "description": " RC4/ARC4 encryption/decryption library for PHP. ",
     "license": "MIT",
     "authors": [
         {
@@ -9,7 +9,8 @@
         }
     ],
     "require": {
-        "php": "^8.3"
+        "php": "^8.3",
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
@@ -19,14 +20,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Felix\\:namespace\\": "src/"
-        }
+            "Felix\\RC4\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "Felix\\:namespace\\Tests\\": "tests/"
+            "Felix\\RC4\\Tests\\": "tests/"
         }
     },
+
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {

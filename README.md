@@ -1,10 +1,10 @@
-# :name
+# RC4/ARC4 encryption/decryption library for PHP.
 
-[![Tests](https://github.com/felixdorn/:name/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/felixdorn/:name/actions/workflows/tests.yml)
-[![Formats](https://github.com/felixdorn/:name/actions/workflows/formats.yml/badge.svg?branch=main)](https://github.com/felixdorn/:name/actions/workflows/formats.yml)
-[![Version](https://poser.pugx.org/felixdorn/:name/version)](//packagist.org/packages/felixdorn/:name)
-[![Total Downloads](https://poser.pugx.org/felixdorn/:name/downloads)](//packagist.org/packages/felixdorn/:name)
-[![License](https://poser.pugx.org/felixdorn/:name/license)](//packagist.org/packages/felixdorn/:name)
+[![Tests](https://github.com/felixdorn/php-rc4/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/felixdorn/php-rc4/actions/workflows/tests.yml)
+[![Formats](https://github.com/felixdorn/php-rc4/actions/workflows/formats.yml/badge.svg?branch=main)](https://github.com/felixdorn/php-rc4/actions/workflows/formats.yml)
+[![Version](https://poser.pugx.org/felixdorn/php-rc4/version)](//packagist.org/packages/felixdorn/php-rc4)
+[![Total Downloads](https://poser.pugx.org/felixdorn/php-rc4/downloads)](//packagist.org/packages/felixdorn/php-rc4)
+[![License](https://poser.pugx.org/felixdorn/php-rc4/license)](//packagist.org/packages/felixdorn/php-rc4)
 
 ## Installation
 
@@ -13,7 +13,7 @@
 You can install the package via composer:
 
 ```bash
-composer require felixdorn/:name
+composer require felixdorn/php-rc4
 ```
 
 ## Usage
@@ -24,4 +24,4 @@ composer require felixdorn/:name
 composer test
 ```
 
-**:name** was created by **[Félix Dorn](https://felixdorn.fr)** under the **[MIT license](https://opensource.org/licenses/MIT)**.
+**php-rc4** was created by **[Félix Dorn](https://felixdorn.fr)** under the **[MIT license](https://opensource.org/licenses/MIT)**.
