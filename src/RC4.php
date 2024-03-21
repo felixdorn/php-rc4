@@ -7,10 +7,10 @@ class RC4
     /** @var callable|null */
     protected static $fake = null;
 
-    public static function rc4(string $rawKey, string $rawData): string
+    public static function rc4(string $key, string $data): string
     {
         if (static::$fake) {
-            return (static::$fake)($rawKey, $rawData);
+            return (static::$fake)($key, $data);
         }
 
         $state = new \SplFixedArray(256);
@@ -20,7 +20,7 @@ class RC4
 
         $j = 0;
         for ($i = 0; $i < 256; $i++) {
-            $j = ($j + $state[$i] + ord($rawKey[$i % strlen($rawKey)])) % 256;
+            $j = ($j + $state[$i] + ord($key[$i % strlen($key)])) % 256;
 
             // Swap
             $tmp = $state[$i];
@@ -32,7 +32,7 @@ class RC4
         $i = 0;
         $j = 0;
         $text = '';
-        for ($y = 0; $y < strlen($rawData); $y++) {
+        for ($y = 0; $y < strlen($data); $y++) {
             $i = ($i + 1) % 256;
             $j = ($j + $state[$i]) % 256;
 
@@ -42,7 +42,7 @@ class RC4
             $state[$j] = $tmp;
             // End Swap
 
-            $text .= $rawData[$y] ^ chr($state[($state[$i] + $state[$j]) % 256]);
+            $text .= $data[$y] ^ chr($state[($state[$i] + $state[$j]) % 256]);
         }
 
         return $text;

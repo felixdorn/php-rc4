@@ -17,7 +17,23 @@ composer require felixdorn/php-rc4
 ```
 
 ## Usage
-// Usage goes here
+
+```php
+$encrypted = \Felix\RC4\RC4::rc4('key', 'data')
+$decrypted = \Felix\RC4\RC4::rc4('key', $encrypted);
+
+// In tests
+\Felix\RC4\RC4::fake(function ($key, $data) {
+    // Fake it if you need to for some reason.
+});
+
+rc4('key', 'data'); // calls RC4::rc4
+
+// Or, to be semantic:
+$encrypted = rc4_encrypt('key', 'data');
+$decrypted = rc4_decrypt('key', 'data');
+// But both call rc4() under the hood
+```
 
 ## Testing
 ```bash
